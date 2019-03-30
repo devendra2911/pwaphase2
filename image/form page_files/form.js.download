@@ -1,0 +1,59 @@
+function submitData() {
+  var Career=document.querySelector("#Career").value;
+  var name=document.querySelector("#name").value;
+  var mobileno=document.querySelector("#mobileno").value;
+  var email=document.querySelector("#email").value;
+  var address=document.querySelector("#address").value;
+  var institute=document.querySelector("#institute").value;
+  var yop=document.querySelector("#yop").value;
+  var CGPA=document.querySelector("#CGPA").value;
+  var college=document.querySelector("#college").value;
+  var yop=document.querySelector("#yop").value;
+  var branch=document.querySelector("#branch").value;
+  var percentage=document.querySelector("#percentage").value;
+  var school=document.querySelector("#school").value;
+  var yop=document.querySelector("#yop").value;
+  var CGPA=document.querySelector("#CGPA").value;
+  var skills=document.querySelector("#skills").value;
+
+var idb=window.indexedDB || window.mozIndexedDB || window.msIndexedDB || window.webkitIndexedDB ;
+if(!idb in window){
+  console.log("indexedDB is not supported");
+}
+// indexedDBCreation
+  var open=idb.open("storeData",1);
+  console.log("indexedDB is created");
+open.onupgradeneeded=function(e){
+  var request=e.target.result;
+  request.createObjectStore("formdata",{keyPath:"id",autoIncrement:true});
+console.log("storeData is created");
+}
+open.onerror=function(error){
+  console.log("error is occured");
+}
+open.onsuccess=function(e){
+  request=e.target.result;
+  var transaction=request.transaction("formdata","readwrite");
+  store=transaction.objectStore("formdata");
+  store.put({
+    Career:Career,
+    name:name,
+    mobileno:mobileno,
+    email:email,
+    address:address,
+    institute:institute,
+    branch:branch,
+    yop:yop,
+    CGPA:CGPA,
+    college:college,
+    yop:yop,
+    branch:branch,
+    percentage:percentage,
+    school:school,
+    yop:yop,
+    CGPA:CGPA,
+
+  })
+}
+window.open("index.html");
+}

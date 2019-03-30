@@ -1,0 +1,40 @@
+body{
+  background-color: #8BABAD;
+
+}
+header{
+  font-size: 20px;
+  font-style: italic;
+  background: #1020E7;
+  text-align: center;
+}
+img{
+  float: right;
+  width: 30%;
+  height: 20%;
+}
+a
+{
+  float: right;
+}
+.child{
+  width: 20%;
+  padding: 1%;
+  margin: 1%;
+  text-align: center;
+  border-radius: 3px solid black;
+  /* display: .block; */
+  /* background-color: red; */
+  justify-content: space-around;
+}
+.child img{
+  width: 200px;
+  height: 200px;
+  border: 2px solid red;
+}
+.link{
+  /* text-decoration: none; */
+  background-color: green; 
+  color: #fff;
+
+}
